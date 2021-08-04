@@ -2,22 +2,22 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('install node modules') {
             steps {
-                echo 'Hello World'
+                sh "npm install"
             }
         }
-        stage('Build') {
+        stage('unit testing') {
             steps {
-                echo 'Building'
+                sh "npm run test"
             }
         }
-        stage('Deploy') {
+        stage('build') {
             steps {
-                echo 'Deploying'
+                sh "npm run build"
             }
         }
-        stage('Test') {
+        stage('Test Integration') {
             steps {
                 echo 'Testing'
             }
