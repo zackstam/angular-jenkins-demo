@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Release') {
             steps {
-                echo 'Release'
+                sh "cp -a /home/zakuan/.jenkins/workspace/angular-freestyle/dist/angular-jenkins-demo /var/www/html"
             }
         }
     }
